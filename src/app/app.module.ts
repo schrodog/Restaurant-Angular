@@ -8,12 +8,20 @@ import { TableManagementComponent } from './table-management/table-management.co
 
 import {HttpClientModule} from '@angular/common/http'
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api'
-import {InMemoryDataService} from './in-memory-data.service'
+import {InMemoryDataService} from './in-memory-data.service';
+import { LoginComponent } from './login/login.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
+import { OrderComponent } from './order/order.component';
+import { FoodMenuComponent } from './food-menu/food-menu.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableManagementComponent
+    TableManagementComponent,
+    LoginComponent,
+    MainMenuComponent,
+    OrderComponent,
+    FoodMenuComponent
   ],
   imports: [
     BrowserModule,

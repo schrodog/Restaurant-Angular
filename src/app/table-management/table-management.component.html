@@ -1,13 +1,33 @@
+<nav>
+  <button routerLink="/">Logout</button>
+</nav>
+
 <h1>Table Management</h1>
 
+<button (click)="addTable()">Add</button>
+<!-- 
 <table>
   <tr>
     <th *ngFor="let field of fields">{{field}}</th>
+    <th></th>
   </tr>
-  <tr *ngFor="">
-    
+  <tr *ngFor="let table of tables">
+    <td>{{table.tableNo}}</td>
+    <td>{{table.numOfSeat}}</td>
+    <td>{{table.available ? 'Yes' : 'No'}}</td>
+    <td><button (click)="delete(table)">X</button></td>
   </tr>
-</table>
+</table> -->
+
+<div>
+  <span *ngFor="let table of tables" class="table" 
+    [class.available]="table.available">
+    {{table.tableNo}}
+  </span>
+</div>
+
+
+
 
 
 

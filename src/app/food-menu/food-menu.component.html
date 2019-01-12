@@ -1,0 +1,22 @@
+<h1>Place order</h1>
+
+<input type="text" placeholder="Search">
+<button>Search</button>
+
+<span>Table Number: {{tableNo}}</span>
+
+<div *ngFor="let foodType of foodTypes">{{foodType}}</div>
+
+<div *ngFor="let foodName of foodNames">{{foodName}}</div>
+
+<div *ngFor="let miniOrder of miniOrders">
+  <div>{{miniOrder.foodName}}</div>
+  <div>{{miniOrder.quantity}}</div>
+</div>
+
+
+
+
+
+
+

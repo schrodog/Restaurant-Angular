@@ -1,0 +1,35 @@
+<h1>Order Table Review</h1>
+
+<div>
+  <span>Oreder No: {{orderNo}}</span>
+  <span>Table No: {{tableNo}}</span>
+</div>
+
+<table>
+  <tr>
+    <th *ngFor="let field of fields">{{field}}</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let order of orders">
+    <td>{{order.foodName}}</td>
+    <td>{{order.quantity}}</td>
+    <td>{{order.price}}</td>
+    <td><button (click)="delete(order)">X</button></td>
+  </tr>
+</table> 
+
+<div>Total: {{totalPrice}}</div>
+<span>Money Received: </span>
+<input type="number" #money="ngModel" required [(ngModel)]="moneyReceived">
+
+<span>Change:</span> 
+<span>{{(moneyReceived - totalPrice) >= 0 ? (moneyReceived - totalPrice) : 'Error!' }}</span>
+
+
+<footer>
+  <button>New Order</button>
+  <button>Confirm Order</button>
+  <button>Checkout</button>
+</footer>
+
+
