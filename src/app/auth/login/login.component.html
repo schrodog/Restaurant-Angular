@@ -1,4 +1,4 @@
-<h1>Login Page</h1>
+<!-- <h1>Login Page</h1>
 
 <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
   <label for="username">User name:</label>
@@ -18,10 +18,28 @@
   <button type="submit" [disabled]="!loginForm.form.valid" routerLink="/table">Login</button>
 
 </form>
+ -->
 
+<form [formGroup]="form">
+  <fieldset>
+    <legend>Login</legend>
+    <div class="form-field">
+      <label>Email:</label>
+      <input name="email" formControlName="email">
+    </div>
+    <div class="form-field">
+      <label>Password:</label>
+      <input name="password" formControlName="password" type="password">
+    </div>
+  </fieldset>
 
+  <div class="form-buttons">
+    <button class="button button-primary"
+      (click)="login()">Login</button>
+  </div>
+</form>
 
-
-
-
-
+ 
+ 
+ 
+ 

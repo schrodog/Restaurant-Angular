@@ -2,17 +2,18 @@ export class Table {
   tableNo: string;
   numOfSeat: number;
   available: boolean;
+  masterOrderID?: number ;
 }
 
-export class OrderData {
+export class Order {
   orderID: number;
   quantity: number;
   foodID: string;
+  foodName: string;
   price: number;
 }
 
-export class OrderDisplay {
-  orderID: string;
+export class MiniOrder {
   foodID: string;
   foodName: string;
   quantity: number;

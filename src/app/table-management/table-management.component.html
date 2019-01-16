@@ -21,7 +21,7 @@
 
 <div>
   <span *ngFor="let table of tables" class="table" 
-    [class.available]="table.available">
+    [class.available]="table.available" (click)="selectTable(table)">
     {{table.tableNo}}
   </span>
 </div>

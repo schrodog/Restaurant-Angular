@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { OrderDisplay } from '../objects';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { Order } from '../objects';
+import { TableService } from '../services/table.service';
+import {OrderService} from '../services/order.service'
+import { EventEmitter } from 'events';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-order',
@@ -8,23 +12,31 @@ import { OrderDisplay } from '../objects';
 })
 export class OrderComponent implements OnInit {
 
-  constructor() { }
+  // @Input('masterOrderID') masterOrderID: number;
+  // @Input('tableNo') tableNo: string;
+  @Output('orders') addOrderTable = new EventEmitter<any[]>();
+
+  constructor(
+    private orderService: OrderService, 
+    private tableService: TableService,
+    private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.currentOrders.subscribe(x => this.orders = x)
   }
 
-  orderNo: number = 15;
-  tableNo: string = 'T4';
   fields: string[] = ["Code", "Food Name", "Quantity", "Price"]
+  orders: Order[];
 
-  orders: OrderDisplay[] = [];
   totalPrice: number = 0;
   moneyReceived: number = 0;
   change: number = 0;
 
-  delete(order: OrderDisplay){
-    
-  }
+  // addOrders(order: Order, masterOrderID: number){
+  //   this.orderService.addNewOrder(order, masterOrderID).subscribe(
+  //     () => { this.addOrderTable.emit({order}) }
+  //   )
+  // }
 
 
 }
