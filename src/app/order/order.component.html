@@ -10,7 +10,7 @@
     <th *ngFor="let field of fields">{{field}}</th>
     <th></th>
   </tr>
-  <tr *ngFor="let order of orders">
+  <tr *ngFor="let order of orders" (ngModelChange)="calcPrice()">
     <td>{{order.foodName}}</td>
     <td>{{order.quantity}}</td>
     <td>{{order.price}}</td>

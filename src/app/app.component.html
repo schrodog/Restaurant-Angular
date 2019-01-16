@@ -3,4 +3,6 @@
 <!-- <app-table-management></app-table-management> -->
 
 
-<router-outlet (changeTable)="changeTable($event)"></router-outlet>
+<router-outlet [currentMasterOrderID]="currentMasterOrderID" 
+  [currentTableNo]="currentTableNo"
+  (changeTable)="changeTable($event)"></router-outlet>
