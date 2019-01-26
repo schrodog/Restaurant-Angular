@@ -5,16 +5,22 @@
 
 <span>Table Number: {{tableNo}}</span>
 
-<div *ngFor="let foodType of foodTypes">{{foodType}}</div>
+<div *ngFor="let foodType of foodTypes" (click)="selecteType(foodType)">{{foodType}}</div>
 
-<div *ngFor="let foodName of foodNames">{{foodName}}</div>
-
-<div *ngFor="let miniOrder of miniOrders">
-  <div>{{miniOrder.foodName}}</div>
-  <div>{{miniOrder.quantity}}</div>
+<div *ngFor="let food of foods  | filterTypes: 'selectedFoodType' 
+  | sort: 'sortField' " (click)="toggleSelect(food)">
+  <div>{{food.foodName}}</div>
+  <div>{{food.price}}</div>
 </div>
 
+<div>
+  <div *ngFor="let miniOrder of miniOrders"  >
+    <div>{{miniOrder.foodName}}</div>
+    <input type="number" [(ngModel)]="miniOrder.quantity">
+  </div>
+</div>
 
+<button (click)="confirm()">Confirm</button>
 
 
 

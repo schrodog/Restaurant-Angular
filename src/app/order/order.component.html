@@ -19,17 +19,19 @@
 </table> 
 
 <div>Total: {{totalPrice}}</div>
-<span>Money Received: </span>
-<input type="number" #money="ngModel" required [(ngModel)]="moneyReceived">
+<div *ngIf="checkOutMode">
+  <span>Money Received: </span>
+  <input type="number" #money="ngModel" required [(ngModel)]="moneyReceived">
+</div>
 
 <span>Change:</span> 
 <span>{{(moneyReceived - totalPrice) >= 0 ? (moneyReceived - totalPrice) : 'Error!' }}</span>
 
 
 <footer>
-  <button>New Order</button>
-  <button>Confirm Order</button>
-  <button>Checkout</button>
+  <button routerLink="/orderfood">New Order</button>
+  <button (click)="confirmOrder()">Confirm Order</button>
+  <button (click)="checkOut">Checkout</button>
 </footer>
 
 

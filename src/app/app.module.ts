@@ -12,7 +12,7 @@ import {InMemoryDataService} from './in-memory-data.service';
 import { LoginComponent } from './auth/login/login.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { OrderComponent } from './order/order.component';
-import { FoodMenuComponent } from './food-menu/food-menu.component'
+import { FoodMenuComponent, FilterPipe, ArraySortPipe } from './food-menu/food-menu.component'
 import { AuthService } from './auth/auth.service';
 import {AuthInterceptor} from './auth/auth.interceptor'
 import { AuthGuard } from './auth/auth.guard';
@@ -24,7 +24,9 @@ import { AuthGuard } from './auth/auth.guard';
     LoginComponent,
     MainMenuComponent,
     OrderComponent,
-    FoodMenuComponent
+    FoodMenuComponent,
+    FilterPipe,
+    ArraySortPipe
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,7 @@ export class MiniOrder {
   price: number;
 }
 
-export class FoodData {
+export class Food {
   foodID: string;
   foodName: string;
   price: number;
@@ -28,12 +28,12 @@ export class FoodData {
   category: string;
 }
 
-export class FoodDisplay {
-  foodID: string;
-  foodName: string;
-  price: number;
-  quantity: number;
-}
+// export class FoodDisplay {
+//   foodID: string;
+//   foodName: string;
+//   price: number;
+//   quantity: number;
+// }
 
 export class Login {
   username: string;

@@ -48,5 +48,9 @@ export class OrderService {
     return this.http.post<boolean>('api/order', {orders, masterOrderID})
   }
 
+  checkOut(masterOrderID: number){
+    return this.http.put<boolean>('api/checkout', {masterOrderID})
+  }
+
   
 }
